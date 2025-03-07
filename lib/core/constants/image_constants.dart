@@ -6,7 +6,7 @@ class ImageConstants {
 
   // images
   static const String welcome = 'assets/images/welcome.png';
-  static const String signIn = 'assets/images/signIn.png';
+  static const String signIn = 'assets/images/sign.png';
   static const String soleil = 'assets/images/soleil.png';
   static const String group = 'assets/images/Group.png';
 
