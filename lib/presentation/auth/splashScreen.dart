@@ -1,4 +1,12 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
+import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
+import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_in_sign_in_screen.dart';
+import 'package:get/get.dart';
+import 'package:meditation_app_ui_community/routes/app_routes.dart';
+
+
+
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -9,7 +17,48 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen> {
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offNamed(AppRoutes.signInSignInScreen);
+    });
+  }
+
+  @override
+ Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(ImageConstants.splashBackground),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child:  SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 66),
+            child: Column(
+              children: [
+                
+               
+                 CustomText(
+                  text: 'Meditation App',
+                 
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    height: 2.2,
+                  ),
+                
+                const Spacer(),
+                // Vous pouvez ajouter d'autres widgets ici si nécessaire
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
