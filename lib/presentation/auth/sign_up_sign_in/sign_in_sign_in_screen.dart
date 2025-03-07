@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_button.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
 import 'package:meditation_app_ui_community/core/utils/colors.dart';
+import 'package:meditation_app_ui_community/routes/app_routes.dart';
 
 class SignInSignInScreen extends StatefulWidget {
   const SignInSignInScreen({super.key});
@@ -60,7 +62,9 @@ class _SignInSignInScreenState extends State<SignInSignInScreen> {
               ),
               SizedBox(height: 40),
               CustomButton(text: 'SIGN UP', 
-              onPressed: () {},
+              onPressed: () {
+                Get.offNamed(AppRoutes.signUpScreen);
+              },
               backgroundColor: AppColors.violet,
               ),
               SizedBox(height: 20),
@@ -73,7 +77,10 @@ class _SignInSignInScreenState extends State<SignInSignInScreen> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(width: 10),
-                  TextButton(onPressed: () {}, child: CustomText(text: 'LOG IN', 
+                  TextButton(onPressed: () {
+                     Get.offNamed(AppRoutes.signInScreen);
+                  }, 
+                  child: CustomText(text: 'LOG IN', 
                   fontSize: 14, 
                   fontWeight: FontWeight.bold,
                   color: AppColors.violet,
@@ -81,6 +88,7 @@ class _SignInSignInScreenState extends State<SignInSignInScreen> {
                   ),
                 ],
               ),
+           
             ],
           ),
         ),
