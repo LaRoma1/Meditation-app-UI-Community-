@@ -15,6 +15,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  // Ajouter un contrôleur pour gérer la visibilité du mot de passe
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,22 +125,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: AppColors.grey,
                   ),
                   SizedBox(height: 20),
-                  CustomTextField(hint: 'Email', prefixIcon: Icon(Icons.email)),
+                  CustomTextField(hint: 'Email'),
                   SizedBox(height: 20),
                   CustomTextField(
                     hint: 'Password',
-                    prefixIcon: Icon(Icons.lock),
+                    
                   ),
                   SizedBox(height: 20),
                   CustomButton(
                     backgroundColor: AppColors.violet,
                     text: 'LOGIN',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offNamed(AppRoutes.signInScreen);
+                    },
                   ),
                   SizedBox(height: 10),
                   CustomText(
                     text: 'Forgot Password?',
-                    fontSize: 16,
+                    color: AppColors.grey,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                   SizedBox(height: 40),
@@ -172,4 +177,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
 }
