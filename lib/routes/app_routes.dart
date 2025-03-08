@@ -4,12 +4,13 @@ import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/si
 import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_in_sign_in_screen.dart';
 import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_up/sign_up_screen.dart';
 import 'package:meditation_app_ui_community/presentation/auth/splashScreen.dart';
+import 'package:meditation_app_ui_community/presentation/welcome/welcome_screen.dart';
 class AppRoutes {
   static const String signInScreen = '/signInScreen';
   static const String splashScreen = '/splashScreen';
   static const String signUpScreen = '/signUpScreen';
   static const String signInSignInScreen = '/signInSignInScreen';
-
+  static const String welcomeScreen = '/welcomeScreen';
   static List<GetPage> pages = [
     GetPage(
       transition: Transition.rightToLeft,
@@ -32,7 +33,11 @@ class AppRoutes {
       name: signInSignInScreen,
       page: () => const SignInSignInScreen(),
     ),
-   
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: welcomeScreen,
+      page: () => const WelcomeScreen(),
+    ),
 
   ];
 }
