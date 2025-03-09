@@ -57,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               SizedBox(height: 20),
               CustomText(
-                text: 'Hi Afsar, Welcome',
+                text: 'Hi Romaric, Welcome',
                 fontSize: 20,
                 color: const Color.fromARGB(255, 235, 232, 219),
                 fontWeight: FontWeight.bold,
