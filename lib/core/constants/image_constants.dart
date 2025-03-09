@@ -9,7 +9,12 @@ class ImageConstants {
   static const String signIn = 'assets/images/sign.png';
   static const String soleil = 'assets/images/soleil.png';
   static const String group = 'assets/images/Group.png';
-
+  static const String stress = 'assets/images/stress.png';
+  static const String betterSleep = 'assets/images/bettersleep.png';
+  static const String growd = 'assets/images/growd.png';
+  static const String happy = 'assets/images/happy.png';
+  static const String perform = 'assets/images/perform.png';
+  static const String anxiety = 'assets/images/anxiety.png';
 
 
   // icons
