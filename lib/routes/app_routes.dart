@@ -6,7 +6,7 @@ import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/si
 import 'package:meditation_app_ui_community/presentation/auth/splashScreen.dart';
 import 'package:meditation_app_ui_community/presentation/welcome/welcome_screen.dart';
 import 'package:meditation_app_ui_community/presentation/choose_topic/choose_topic_screen.dart';
-
+import 'package:meditation_app_ui_community/presentation/reminders/reminders_screen.dart';
 
 
 class AppRoutes {
@@ -15,7 +15,8 @@ class AppRoutes {
   static const String signUpScreen = '/signUpScreen';
   static const String signInSignInScreen = '/signInSignInScreen';
   static const String welcomeScreen = '/welcomeScreen';
-  static const String chooseTopicScreen = '/chooseTopicScreen';
+  static const String chooseTopicScreen = '/chooseTopicScreen'; 
+  static const String remindersScreen = '/remindersScreen';
   static List<GetPage> pages = [
     GetPage(
       transition: Transition.rightToLeft,
@@ -47,6 +48,11 @@ class AppRoutes {
       transition: Transition.rightToLeft,
       name: chooseTopicScreen,
       page: () => const ChooseTopicScreen(),
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: remindersScreen,
+      page: () => const RemindersScreen(),
     ),
   ];
 }
