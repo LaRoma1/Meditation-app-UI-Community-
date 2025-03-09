@@ -70,56 +70,93 @@ class _ChooseTopicScreenState extends State<ChooseTopicScreen> {
                   ),
               SizedBox(height: 20),
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
-                    childAspectRatio: 0.8,
-                  ),
-                  itemCount: topics.length,
-                  itemBuilder: (context, index) {
-                    bool isLeftItem = index % 4 < 2;
-                    bool isFirstInPair = index % 4 == 0 || index % 4 == 2;
-                    double heightFactor = isFirstInPair ? (isLeftItem ? 1.2 : 0.8) : (isLeftItem ? 0.8 : 1.2);
-                    
-                    return Container(
-                      height: MediaQuery.of(context).size.width * 0.5 * heightFactor,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                          image: AssetImage(topics[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.transparent,
-                              Colors.black.withOpacity(0.4),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Colonne gauche
+                        Expanded(
+                          child: Column(
+                            children: [
+                              _buildTopicCard(topics[0], 1.4), // Reduce Stress (grand)
+                              SizedBox(height: 15),
+                              _buildTopicCard(topics[4], 1.0), // Increase Happiness (moyen)
+                              SizedBox(height: 15),
+                              _buildTopicCard(topics[2], 1.4), // Personal Growth (grand)
                             ],
                           ),
                         ),
-                        child: Center(
-                          child: CustomText(
-                            text: topics[index].title,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                        SizedBox(width: 15),
+                        // Colonne droite
+                        Expanded(
+                          child: Column(
+                            children: [
+                              _buildTopicCard(topics[1], 0.8), // Improve Performance (petit)
+                              SizedBox(height: 15),
+                              _buildTopicCard(topics[5], 1.4), // Reduce Anxiety (grand)
+                              SizedBox(height: 15),
+                              _buildTopicCard(topics[3], 1.0), // Better Sleep (moyen)
+                            ],
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
         ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTopicCard(Topic topic, double heightFactor) {
+    return Container(
+      height: MediaQuery.of(context).size.width * 0.5 * heightFactor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(topic.image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: GestureDetector(
+        onTap: () {
+           
+            Get.toNamed(AppRoutes.remindersScreen);
+        },
+        child: Container(  
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.transparent,
+                Colors.black.withOpacity(0.6),
+              ],
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: CustomText(
+                  text: topic.title,
+                  fontSize: 16,
+                  fontFamily: 'OpenSans',
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
