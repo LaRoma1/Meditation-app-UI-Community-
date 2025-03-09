@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_button.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
-import 'package:meditation_app_ui_community/core/utils/colors.dart';
 import 'package:meditation_app_ui_community/routes/app_routes.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -83,7 +82,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               CustomButton(text: 'GET STARTED', 
               textColor: Colors.black,
               onPressed: () {
-                Get.offNamed(AppRoutes.signUpScreen);
+                Get.offNamed(AppRoutes.chooseTopicScreen);
               },
               backgroundColor:Color.fromARGB(255, 235, 232, 219),
               ),
