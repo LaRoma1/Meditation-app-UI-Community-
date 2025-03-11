@@ -15,6 +15,12 @@ class RemindersScreen extends StatefulWidget {
 }
 
 class _RemindersScreenState extends State<RemindersScreen> {
+  // Liste des jours sélectionnés
+  final List<bool> _selectedDays = List.generate(7, (index) => false);
+  
+  // Liste des jours de la semaine
+  final List<String> _days = ['M', 'T', 'W', 'TH', 'F', 'S', 'SU'];
+
   @override
     Widget build(BuildContext context) {
     return Scaffold(
@@ -75,18 +81,51 @@ class _RemindersScreenState extends State<RemindersScreen> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                     ),
-                SizedBox(height: 40),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                   
-                  ],
+                  children: List.generate(
+                    7,
+                    (index) => GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedDays[index] = !_selectedDays[index];
+                        });
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: _selectedDays[index] ? Colors.black : Colors.grey.shade300,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: CustomText(
+                            text: _days[index],
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: _selectedDays[index] ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                CustomButton(
+                  text: 'Save',
+                  backgroundColor: AppColors.violet,
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.homeScreen);
+                  },
                 ),
                 SizedBox(height: 20),
-                CustomText(
-                  text: 'Reminders will be sent to your phone.',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
+                Center(
+                  child: CustomText(
+                    text: 'NO THANKS',
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
