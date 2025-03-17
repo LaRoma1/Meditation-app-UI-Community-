@@ -14,6 +14,32 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    
+    switch (index) {
+      case 0:
+        Get.toNamed(AppRoutes.homeScreen);
+        break;
+      case 1:
+        Get.toNamed('/meditateScreen');
+        break;
+      case 2:
+        Get.toNamed('/musicScreen');
+        break;
+      case 3:
+        Get.toNamed('/sleepScreen');
+        break;
+      case 4:
+        Get.toNamed('/profileScreen');
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,6 +201,35 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.grey,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Accueil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.self_improvement),
+            label: 'Méditer',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.music_note),
+            label: 'Musique',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bedtime),
+            label: 'Sommeil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profil',
+          ),
+        ],
       ),
     );
   }
