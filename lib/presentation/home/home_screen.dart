@@ -43,10 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: AppColors.grey,
         onTap: _onItemTapped,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Accueil',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
           BottomNavigationBarItem(
             icon: Icon(Icons.self_improvement),
             label: 'Méditer',
@@ -55,14 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.music_note),
             label: 'Musique',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bedtime),
-            label: 'Sommeil',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.bedtime), label: 'Sommeil'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
         ],
       ),
     );
@@ -77,9 +68,10 @@ class HomeContent extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
             SizedBox(height: 20),
             Center(
               child: Row(
@@ -155,7 +147,10 @@ class HomeContent extends StatelessWidget {
                                 // Action du bouton
                               },
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15),
@@ -208,7 +203,10 @@ class HomeContent extends StatelessWidget {
                                 // Action du bouton
                               },
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15),
@@ -228,7 +226,109 @@ class HomeContent extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 20),
+
+            // Row(
+            //   children: [
+            //     Image.asset(ImageConstants.mask),
+            //   ],
+            // ),
+            SizedBox(height: 40),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                       width: 150,
+                  height: 200,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          image: DecorationImage(
+                            image: AssetImage(ImageConstants.basiscourse),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      CustomText(
+                        text: 'Mask',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textAlign: TextAlign.left,
+                      ),
+                      CustomText(
+                        text: 'meditation 20 min',
+                        fontSize: 12,
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                       width: 150,
+                  height: 200,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          image: DecorationImage(
+                            image: AssetImage(ImageConstants.basiscourse),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      CustomText(
+                        text: 'Mask',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textAlign: TextAlign.left,
+                      ),
+                      CustomText(
+                        text: 'meditation 20 min',
+                        fontSize: 12,
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                       width: 150,
+                  height: 200,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          image: DecorationImage(
+                            image: AssetImage(ImageConstants.basiscourse),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      CustomText(
+                        text: 'Mask',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textAlign: TextAlign.left,
+                      ),
+                      CustomText(
+                        text: 'meditation 20 min',
+                        fontSize: 12,
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
+        ),
         ),
       ),
     );

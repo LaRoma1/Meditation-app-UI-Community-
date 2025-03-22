@@ -17,6 +17,7 @@ class ImageConstants {
   static const String anxiety = 'assets/images/anxiety.png';
   static const String basiscourse = 'assets/images/basiscourse.png';
   static const String relaxation = 'assets/images/relaxation.png';
+  static const String mask = 'assets/images/mask.png';
 
 
   // icons
