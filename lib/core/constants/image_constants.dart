@@ -6,10 +6,18 @@ class ImageConstants {
 
   // images
   static const String welcome = 'assets/images/welcome.png';
-  static const String signIn = 'assets/images/signIn.png';
+  static const String signIn = 'assets/images/sign.png';
   static const String soleil = 'assets/images/soleil.png';
   static const String group = 'assets/images/Group.png';
-
+  static const String stress = 'assets/images/stress.png';
+  static const String betterSleep = 'assets/images/bettersleep.png';
+  static const String growd = 'assets/images/growd.png';
+  static const String happy = 'assets/images/happy.png';
+  static const String perform = 'assets/images/perform.png';
+  static const String anxiety = 'assets/images/anxiety.png';
+  static const String basiscourse = 'assets/images/basiscourse.png';
+  static const String relaxation = 'assets/images/relaxation.png';
+  static const String mask = 'assets/images/mask.png';
 
 
   // icons

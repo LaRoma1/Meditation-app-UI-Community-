@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
-import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_in_sign_in_screen.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app_ui_community/routes/app_routes.dart';
 
@@ -19,7 +18,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Get.offNamed(AppRoutes.signInSignInScreen);
     });
   }
