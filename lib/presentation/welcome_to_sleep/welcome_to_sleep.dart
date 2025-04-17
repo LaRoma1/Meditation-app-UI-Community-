@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
-import 'package:meditation_app_ui_community/core/utils/colors.dart';
 
-class SleepScreen extends StatelessWidget {
-  const SleepScreen({super.key});
+class WelcomeToSleep extends StatefulWidget {
+  const WelcomeToSleep({super.key});
 
+  @override
+  State<WelcomeToSleep> createState() => _WelcomeToSleepState();
+}
+
+class _WelcomeToSleepState extends State<WelcomeToSleep> {
+  @override
   @override
   Widget build(BuildContext context) {
      return Scaffold(

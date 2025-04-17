@@ -5,7 +5,7 @@ import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
 import 'package:meditation_app_ui_community/core/utils/colors.dart';
 import 'package:meditation_app_ui_community/presentation/meditate/meditate_screen.dart';
-import 'package:meditation_app_ui_community/presentation/music/music_screen.dart';
+import 'package:meditation_app_ui_community/presentation/musics/musics_screen.dart';
 import 'package:meditation_app_ui_community/presentation/sleep/sleep_screen.dart';
 import 'package:meditation_app_ui_community/presentation/profile/profile_screen.dart';
 import 'package:meditation_app_ui_community/routes/app_routes.dart';
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const HomeContent(),
     const SleepScreen(),
     const MeditateScreen(),
-    const MusicScreen(),
+    const MusicsScreen(),
     const ProfileScreen(),
   ];
 
@@ -307,6 +307,7 @@ class HomeContent extends StatelessWidget {
                   ),
                 ),
               ),
+              
               SizedBox(height: 40),
               CustomText(
                 text: 'Recomended for you',
