@@ -3,6 +3,7 @@ import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/si
 import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_in_sign_in_screen.dart';
 import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/sign_up/sign_up_screen.dart';
 import 'package:meditation_app_ui_community/presentation/auth/splashScreen.dart';
+import 'package:meditation_app_ui_community/presentation/course_details/course_details_screen.dart';
 import 'package:meditation_app_ui_community/presentation/welcome/welcome_screen.dart';
 import 'package:meditation_app_ui_community/presentation/choose_topic/choose_topic_screen.dart';
 import 'package:meditation_app_ui_community/presentation/reminders/reminders_screen.dart';
@@ -17,6 +18,7 @@ class AppRoutes {
   static const String chooseTopicScreen = '/chooseTopicScreen'; 
   static const String remindersScreen = '/remindersScreen';
   static const String homeScreen = '/homeScreen';
+  static const String courseDetailScreen = '/courseDetailScreen';
 
   static List<GetPage> pages = [
     GetPage(
@@ -58,6 +60,11 @@ class AppRoutes {
       transition: Transition.rightToLeft,
       name: homeScreen,
       page: () => const HomeScreen(),
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: courseDetailScreen,
+      page: () => const CourseDetailsScreen(),
     ),
   ];
 }

@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   Widget build(BuildContext context) {
     return GetMaterialApp(
+     
       locale: Get.deviceLocale, //for setting localization strings
       title: 'Meditation App',
       initialRoute: AppRoutes.splashScreen,
