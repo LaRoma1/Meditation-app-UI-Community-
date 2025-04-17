@@ -12,14 +12,18 @@ class MeditateScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                text: 'Méditation',
+                text: 'Méditate',
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
               SizedBox(height: 20),
+              CustomText(
+                text: 'Méditation',
+                fontSize: 16,
+                color: AppColors.grey,
+              ),
               // Ajoutez ici le contenu de votre écran de méditation
             ],
           ),
