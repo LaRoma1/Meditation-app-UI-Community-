@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
 import 'package:meditation_app_ui_community/core/utils/colors.dart';
+import 'package:get/get.dart';
+import 'package:meditation_app_ui_community/routes/app_routes.dart';
+
 
 class MeditateScreen extends StatefulWidget {
   const MeditateScreen({super.key});
@@ -155,17 +158,22 @@ class _MeditateScreenState extends State<MeditateScreen> {
                           ),
                         ],
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.play_arrow,
-                          color: Color(0xFF3F414E),
-                          size: 25,
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.musicScreen);
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.play_arrow,
+                            color: Color(0xFF3F414E),
+                            size: 25,
+                          ),
                         ),
                       ),
                     ],
