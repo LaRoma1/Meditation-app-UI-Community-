@@ -307,6 +307,7 @@ class HomeContent extends StatelessWidget {
                   ),
                 ),
               ),
+              
               SizedBox(height: 40),
               CustomText(
                 text: 'Recomended for you',

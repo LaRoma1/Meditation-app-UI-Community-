@@ -20,7 +20,27 @@ class ImageConstants {
   static const String focus = 'assets/images/focus.png';
   static const String happiness = 'assets/images/happiness.png';
   static const String bannervideo = 'assets/images/bannervideo.png';
+  static const String bannersleep = 'assets/images/bannersleep.png';
+  static const String birds = 'assets/images/birds.png';
+  static const String herosleep = 'assets/images/herosleep.png';
   static const String solar = 'assets/images/solar.png';
+  static const String bannermeditate = 'assets/images/bannermeditate.png';
+  static const String meditate1 = 'assets/images/meditate1.png';
+  static const String meditate2 = 'assets/images/meditate2.png';
+  static const String meditate3 = 'assets/images/meditate3.png';
+  static const String meditate4 = 'assets/images/meditate4.png';
+  static const String moonclouds = 'assets/images/moonclouds.png';
+  static const String musiclight = 'assets/images/musiclight.png';
+  static const String musicsleep = 'assets/images/musicsleep.png';
+  static const String welcometosleep = 'assets/images/welcometosleep.png';
+  static const String nightislands = 'assets/images/nightislands.png';
+  static const String sweetsleep = 'assets/images/sweetsleep.png';
+ 
+  
+  
+  
+  
+
 
 
   // icons
