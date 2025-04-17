@@ -32,7 +32,7 @@ class ImageConstants {
   static const String moonclouds = 'assets/images/moonclouds.png';
   static const String musiclight = 'assets/images/musiclight.png';
   static const String musicsleep = 'assets/images/musicsleep.png';
-  static const String welcometosleep = 'assets/images/welcometosleep.png';
+  static const String welcomesleep = 'assets/images/welcomesleep.png';
   static const String nightislands = 'assets/images/nightislands.png';
   static const String sweetsleep = 'assets/images/sweetsleep.png';
  
