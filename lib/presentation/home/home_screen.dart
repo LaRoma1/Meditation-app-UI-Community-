@@ -45,18 +45,18 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: AppColors.grey,
         onTap: _onItemTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.bedtime), label: 'Sommeil'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.bedtime), label: 'Sleep'),
           BottomNavigationBarItem(
             icon: Icon(Icons.self_improvement),
-            label: 'Méditer',
+            label: 'Meditate',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.music_note),
-            label: 'Musique',
+            label: 'Music',
           ),
 
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );
@@ -100,7 +100,7 @@ class HomeContent extends StatelessWidget {
               ),
               SizedBox(height: 20),
               CustomText(
-                text: 'Good Morning, Romaric',
+                text: 'Good Evening, Romaric',
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
