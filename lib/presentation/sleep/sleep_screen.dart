@@ -49,10 +49,12 @@ class _SleepScreenState extends State<SleepScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(ImageConstants.welcomesleep),
+     
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(ImageConstants.welcomesleep),
             fit: BoxFit.cover,
           ),
         ),
@@ -63,6 +65,7 @@ class _SleepScreenState extends State<SleepScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 40),
                 CustomText(
                   text: 'Sleep Stories',
                   color: Colors.white,
@@ -135,7 +138,7 @@ class _SleepScreenState extends State<SleepScreen> {
 
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.35,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -148,58 +151,141 @@ class _SleepScreenState extends State<SleepScreen> {
                           ImageConstants.bannersleep,
                           fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.25,
+                          height: MediaQuery.of(context).size.height * 0.35,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CustomText(
-                                  text: 'The ocean moon',
-                                  color: Colors.white,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: 'The ocean moon',
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 8),
+                              CustomText(
+                                text:
+                                    'Non-stop 8-hour mixes of our\nmost popular sleep audio',
+                                color: Colors.white70,
+                                fontSize: 14,
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 20),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: AppColors.primaryColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                    vertical: 12,
+                                  ),
                                 ),
-                                SizedBox(height: 8),
-                                CustomText(
-                                  text:
-                                      'Non-stop 8-hour mixes of our\nmost popular sleep audio',
-                                  color: Colors.white70,
-                                  fontSize: 14,
-                                ),
-                              ],
-                            ),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.primaryColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 20,
-                                  vertical: 12,
+                                child: Text(
+                                  'START',
+                                  style: TextStyle(color: Colors.white),
                                 ),
                               ),
-                              child: Text(
-                                'START',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 20),
+
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.8,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    List<Map<String, dynamic>> sleepItems = [
+                      {
+                        'image': ImageConstants.nightisland,
+                        'title': 'Night Islands',
+                        'duration': '45 MIN',
+                      },
+                      {
+                        'image': ImageConstants.sweetsleep,
+                        'title': 'Sweet Sleep',
+                        'duration': '30 MIN',
+                      },
+                      {
+                        'image': ImageConstants.moonclouds,
+                        'title': 'Moon Clouds',
+                        'duration': '20 MIN',
+                      },
+                      {
+                        'image': ImageConstants.nightisland,
+                        'title': 'Music Sleep',
+                        'duration': '35 MIN',
+                      },
+                    ];
+
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
+                            ),
+                            child: Image.asset(
+                              sleepItems[index]['image'],
+                              height: 100,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(
+                                  text: sleepItems[index]['title'],
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                SizedBox(height: 4),
+                                CustomText(
+                                  text: sleepItems[index]['duration'],
+                                  color: AppColors.grey,
+                                  fontSize: 12,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                )
               ],
             ),
+          ),
           ),
         ),
       ),
