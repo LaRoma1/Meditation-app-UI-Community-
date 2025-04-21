@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_button.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
-import 'package:meditation_app_ui_community/core/utils/colors.dart';
+import 'package:meditation_app_ui_community/routes/app_routes.dart';
 
 class PlayOption extends StatefulWidget {
   const PlayOption({super.key});
@@ -156,7 +157,9 @@ class _PlayOptionState extends State<PlayOption> {
               child: CustomButton(
                 text: "PLAY",
                 backgroundColor: const Color(0xFF8E97FD),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.musicsScreen);
+                },
                 height: 60,
               ),
             ),
