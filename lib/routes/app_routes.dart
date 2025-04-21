@@ -5,6 +5,7 @@ import 'package:meditation_app_ui_community/presentation/auth/sign_up_sign_in/si
 import 'package:meditation_app_ui_community/presentation/auth/splashScreen.dart';
 import 'package:meditation_app_ui_community/presentation/course_details/course_details_screen.dart';
 import 'package:meditation_app_ui_community/presentation/music/music_screen.dart';
+import 'package:meditation_app_ui_community/presentation/play_option/play_option.dart';
 import 'package:meditation_app_ui_community/presentation/welcome/welcome_screen.dart';
 import 'package:meditation_app_ui_community/presentation/choose_topic/choose_topic_screen.dart';
 import 'package:meditation_app_ui_community/presentation/reminders/reminders_screen.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
   static const String homeScreen = '/homeScreen';
   static const String courseDetailScreen = '/courseDetailScreen';
   static const String musicScreen = '/musicScreen';
+  static const String playOptionScreen = '/playOptionScreen';
 
   static List<GetPage> pages = [
     GetPage(
@@ -72,6 +74,11 @@ class AppRoutes {
       transition: Transition.rightToLeft,
       name: musicScreen,
       page: () => const MusicScreen(),
+    ),
+    GetPage(
+      transition: Transition.rightToLeft,
+      name: playOptionScreen,
+      page: () => const PlayOption(),
     ),
   ];
 }

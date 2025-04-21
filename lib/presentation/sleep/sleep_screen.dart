@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:meditation_app_ui_community/common/widgets/custom_text.dart';
 import 'package:meditation_app_ui_community/core/constants/image_constants.dart';
 import 'package:meditation_app_ui_community/core/utils/colors.dart';
+import 'package:meditation_app_ui_community/routes/app_routes.dart';
 
 class SleepScreen extends StatefulWidget {
   const SleepScreen({super.key});
@@ -179,7 +181,9 @@ class _SleepScreenState extends State<SleepScreen> {
                               ),
                               SizedBox(height: 20),
                               ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.toNamed(AppRoutes.playOptionScreen);
+                                },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColors.primaryColor,
                                   shape: RoundedRectangleBorder(
