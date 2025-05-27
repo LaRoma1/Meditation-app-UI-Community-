@@ -77,7 +77,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: Colors.white,
                 fontWeight: FontWeight.w100,
               ),
-              SizedBox(height: 350),
+              SizedBox(height: 500),
              
               CustomButton(text: 'GET STARTED', 
               textColor: Colors.black,
