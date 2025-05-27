@@ -80,7 +80,7 @@ class _SignInSignInScreenState extends State<SignInSignInScreen> {
                   TextButton(onPressed: () {
                      Get.offNamed(AppRoutes.signInScreen);
                   }, 
-                  child: CustomText(text: 'LOG IN', 
+                  child: CustomText(text: 'SIGN UP', 
                   fontSize: 14, 
                   fontWeight: FontWeight.bold,
                   color: AppColors.violet,

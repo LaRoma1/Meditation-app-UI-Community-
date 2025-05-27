@@ -161,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Get.offNamed(AppRoutes.signInScreen);
                         },
                         child: CustomText(
-                          text: 'LOG IN',
+                          text: 'SIGN IN',
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: AppColors.violet,
